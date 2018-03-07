@@ -1,0 +1,33 @@
+//Bật tắt đèn led
+/*a
+  Blink
+  Bật tắt đèn LED sau mỗi một giây.
+
+  Edit: VinhNH
+ */
+
+// Chon chân 13 của mạch làm chân điều khiển LED. Khai báo một biến để đặt tên cho chân 13.
+// "int" kiểu khai báo(kiểu số nguyên) "led" tên biến "=13" gán giá trị của biến bằng 13.
+int led = 13;
+
+// "void" kiểu khai báo(khai báo hàm không có giá trị trả về).
+// "setup()" tên hàm(setup là một trong hai hàm không thể thiếu trong một trương trình arduino).
+// Hàm setup chỉ thực hiện các câu lện trong nó một lần khi chạy trương trình.
+// Giữa hai dấu "{", "}" là các câu lệnh của hàm setup.
+void setup() {
+  // Khai báo kiểu của một chân của mạch. "led" số thứ tự của chân(=13).
+  // Mỗi chân đều có thể chon một trong hai kiểu "OUTPUT"làm đầu ra, "INPUT" làm đầu vào.
+  pinMode(led, OUTPUT);
+}
+// Khai báo tương tự như setup hàm "loop" là hàm thứ hai không thể thiếu trong một trương trình arduino.
+// Hàm loop lặp lại vô hạn các câu lệnh trong nó theo thứ tự.
+void loop() {
+  // Ghi tín hiệu số(chỉ có hai giá trị: "HIGH" mức cao = 5v và "LOW" mức thấp = 0v) vào chân "led" (chân 13)
+  digitalWrite(led, HIGH);
+  // Chờ 1000 mini giây
+  delay(1000);
+  digitalWrite(led, LOW);
+  delay(1000);
+}
+
+//From <https://sites.google.com/site/vinhngohuy/arduino-co-ban/arduino-co-ban-bat-tat-den-led> 
